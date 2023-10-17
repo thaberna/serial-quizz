@@ -10,7 +10,7 @@ export default function Home() {
             <span>l m m j v s</span>
           </div>
         </div>
-        <div className="flex items-center justify-between text-[#4A5567] w-full px-8">
+        <div className="flex items-center justify-between text-[#4A5567] w-full px-10">
           <div>
             <span>Intentos: </span>
             <span className="text-[#96A2B7]">4/5</span>
