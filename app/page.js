@@ -1,4 +1,28 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import serials from "./constants/serials";
+
 export default function Home() {
+  const [sequence, setSequence] = useState("");
+
+  const getSequence = () => {
+    const uncheckedSerials = serials.filter((serial) => !serial.checked);
+
+    if (uncheckedSerials.length > 0) {
+      const randomIndex = Math.floor(Math.random() * uncheckedSerials.length);
+      const randomSequence = uncheckedSerials[randomIndex];
+      console.log(randomSequence);
+      setSequence(randomSequence.content);
+    } else {
+      console.log("Todas las series han sido resueltas");
+    }
+  };
+
+  useEffect(() => {
+    getSequence();
+  }, [sequence]);
+
   return (
     <main className="flex h-screen flex-col items-center justify-center bg-gradient-to-tr from-[#762BC6] to-[#C751E6] p-8">
       <section className="flex flex-col items-center justify-center bg-[#0A0B1B] rounded-xl w-full md:w-auto p-8">
@@ -7,7 +31,7 @@ export default function Home() {
         </h1>
         <div className="my-8 py-6 md:px-32 bg-[#4A5567] w-full rounded-lg">
           <div className="text-[#96A2B7] text-center text-3xl md:text-5xl tracking-wider">
-            <span>l m m j v s</span>
+            <span>{sequence}</span>
           </div>
         </div>
         <div className="flex items-center justify-evenly flex-col md:flex-row text-[#4A5567] w-full">
