@@ -53,9 +53,9 @@ export default function Home() {
             ? prevMistake + ", " + serial.toString()
             : serial.toString()
         );
+        alert("No es correcto :(");
         setSerial("");
         serialRef.current.focus();
-        alert("No es correcto :(");
         return;
       } else {
         alert("Te has quedado sin intentos. Mejor prueba con otra serie...");
