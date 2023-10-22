@@ -55,6 +55,8 @@ export default function Home() {
         );
         setSerial("");
         serialRef.current.focus();
+        alert("No es correcto :(");
+        return;
       } else {
         alert("Te has quedado sin intentos. Mejor prueba con otra serie...");
         handleNewSeries();
